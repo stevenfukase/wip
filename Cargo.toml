@@ -1,0 +1,19 @@
+[package]
+name = "wip"
+version = "1.0.0"
+edition = "2021"
+
+[workspace]
+members = ["adapters", "application", "domain"]
+
+[dependencies]
+adapters = { path = "./adapters" }
+actix-web = "4"
+dotenv = "0.15.0"
+serde_json = "1.0.93"
+
+[profile.release]
+strip = "symbols"
+opt-level = "s"
+lto = true
+codegen-units = 1

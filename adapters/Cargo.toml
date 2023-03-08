@@ -1,0 +1,29 @@
+[package]
+name = "adapters"
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+application = { path = "../application" }
+domain = { path = "../domain" }
+actix-cors = "0.6.3"
+actix-web = "4"
+actix-web-grants = "3.0.1"
+argon2 = "0.4.1"
+async-trait = "0.1.57"
+bson = { version = "2.1.0", features = ["chrono-0_4"] }
+chrono = "0.4"
+derive_more = "0.99"
+env_logger = "0.10.0"
+futures = "0.3.25"
+futures-util = "0.3"
+jsonwebtoken = "8"
+log = "0.4"
+mongodb = "2.3.1"
+openssl = { version = "0.10.45", features = ["vendored"] }
+rand_core = { version = "0.6", features = ["std"] }
+reqwest = { version = "0.11", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+thiserror = "1.0.32"
+actix-multipart = "0.6.0"
+cloud-storage = { version = "0.11.1", features = ["global-client"] }
