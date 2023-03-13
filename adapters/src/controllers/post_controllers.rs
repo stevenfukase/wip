@@ -48,11 +48,7 @@ async fn create_post(
                     .file_name
                     .ok_or(ApiError::new(400, "File name not found", None))?;
 
-            let file = temp_file
-                .file
-                .as_file()
-                .try_clone()
-                .map_err(|_err| ApiError::new(400, "Image not found", None))?;
+            let file = temp_file.file.into_file();
 
             Ok(Image::new(file, essence_str, &file_name))
         })

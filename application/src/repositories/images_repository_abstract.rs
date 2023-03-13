@@ -4,6 +4,7 @@ use domain::value_structs::{image::Image, image_url::ImageUrl};
 use mockall::{predicate::*, *};
 use std::error::Error;
 
+#[derive(PartialEq, Eq, Hash)]
 pub enum ImageType {
     Profile,
     Post,
@@ -15,6 +16,6 @@ pub trait ImagesRepositoryAbstract {
     async fn upload_images(
         &self,
         images: &[Image],
-        image_type: ImageType,
-    ) -> Result<[ImageUrl; 4], Box<dyn Error>>;
+        image_type: &ImageType,
+    ) -> Result<Vec<ImageUrl>, Box<dyn Error>>;
 }

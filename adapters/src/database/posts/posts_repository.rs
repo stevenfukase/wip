@@ -21,7 +21,7 @@ impl PostsRepositoryAbstract for PostsRepository {
     async fn insert_post(
         &self,
         user_id: &UserId,
-        image_urls: &[ImageUrl; 4],
+        image_urls: &[ImageUrl],
         text: &str,
         hashtags: &HashSet<Hashtag>,
     ) -> Result<PostEntity, Box<dyn std::error::Error>> {
@@ -51,7 +51,7 @@ impl PostsRepositoryAbstract for PostsRepository {
             text,
             &[],
             hashtags,
-        );
+        )?;
 
         Ok(new_post)
     }

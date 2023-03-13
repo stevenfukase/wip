@@ -13,7 +13,7 @@ pub trait PostsRepositoryAbstract {
     async fn insert_post(
         &self,
         user_id: &UserId,
-        images_urls: &[ImageUrl; 4],
+        images_urls: &[ImageUrl],
         text: &str,
         hashtags: &HashSet<Hashtag>,
     ) -> Result<PostEntity, Box<dyn Error>>;

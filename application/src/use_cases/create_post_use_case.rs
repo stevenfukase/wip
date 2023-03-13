@@ -49,7 +49,7 @@ impl<'a> AbstractUseCase<PostEntity> for CreatePostUseCase<'a> {
 
         let image_urls = self
             .images_repository
-            .upload_images(self.images, ImageType::Post)
+            .upload_images(self.images, &ImageType::Post)
             .await?;
 
         let hashtags = hashtags_extactor::extract(self.text);

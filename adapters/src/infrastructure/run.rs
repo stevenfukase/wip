@@ -19,12 +19,12 @@ use actix_web::{
 use actix_web_grants::GrantsMiddleware;
 use std::{net::TcpListener, sync::Arc};
 
-pub fn run<'a>(
+pub fn run(
     listener: TcpListener,
     frontend_url: &str,
     db_url: &str,
     db_name: &str,
-    bucket_name: &'a str,
+    bucket_name: &str,
     auth_config: AuthConfig,
 ) -> Result<actix_web::dev::Server, std::io::Error> {
     env_logger::init();

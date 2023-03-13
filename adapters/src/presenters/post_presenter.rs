@@ -14,7 +14,7 @@ use serde::{Deserialize, Serialize};
 pub struct PostPresenter {
     pub id: PostId,
     pub user_id: UserId,
-    pub image_urls: [ImageUrl; 4],
+    pub image_urls: Vec<ImageUrl>,
     pub text: String,
     pub likers: Vec<UserId>,
     pub hashtags: Vec<Hashtag>,
